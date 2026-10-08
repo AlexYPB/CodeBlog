@@ -1,0 +1,51 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="welcome-section">
+    <h1>Edit Post</h1>
+    <h2>Change Something About It...</h2>
+
+    <% if (error !== null) { %>
+        <h3 class="missing-inputs-error">Error: <%= error %></h3>
+    <% } %>
+
+</div>
+
+<!-- EDIT BLOG POST FORM CARD -->
+<div class="white-box-card create-post-form">
+            
+    <form action="/posts/<%= post.id %>/edit" method="POST">
+
+        <label>Blog Post Title</label>
+    
+        <input class="post-title-input-box"
+            type="text"
+            name="title"
+            value="<%= title %>"
+        >
+
+
+
+
+
+    
+        <label style="margin-top: 30px;">Blog Post Content</label>
+    
+        <textarea class="post-content-input-box" name="content"><%= content %></textarea>
+    
+
+    <button  style="margin-top: 20px;" type="submit">Save Changes</button>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>

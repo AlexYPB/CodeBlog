@@ -1,0 +1,56 @@
+<%- include("partials/header.ejs") %>
+
+
+
+<!-- TITLE SECTION -->
+<div class="welcome-section">
+    <h1>Create a New Post</h1>
+    <h2>Share Something New...</h2>
+
+    <% if (error !== null) { %>
+        <h3 class="missing-inputs-error">Error: <%= error %></h3>
+    <% } %>
+
+
+
+
+
+</div>
+
+<!-- CREATE BLOG POST FORM CARD -->
+<div class="white-box-card create-post-form">
+            
+    <form action="/create" method="POST">
+        <label>Blog Post Title</label>
+    
+        <input value="<%= title %>" class="post-title-input-box"
+            type="text"
+            name="title"
+            placeholder="Write your title here..."
+        >
+
+
+
+    
+        <label style="margin-top: 30px;">Blog Post Content</label>
+    
+        <textarea class="post-content-input-box"
+            type="text"
+            name="content"
+            placeholder="Write your post here..."
+        ><%= content %></textarea>
+    
+
+    <button  style="margin-top: 20px;" type="submit">Publish</button>
+
+</form>
+
+</div>
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>
