@@ -445,7 +445,7 @@ nav a:hover {
 /* ---------------------------------------------------- */
 /* 404 PAGE */
 
-.error-404-section {
+.error-section {
     margin: auto;
     max-width: 500px;
     
@@ -454,11 +454,11 @@ nav a:hover {
     align-items: center;
 }
 
-.error-404-section h2 {
+.error-section h2 {
     margin-top: 10px;
 }
 
-.error-404-section .error-code {
+.error-section .error-code {
     font-size: 200px;
     margin-bottom: 0;
 }
