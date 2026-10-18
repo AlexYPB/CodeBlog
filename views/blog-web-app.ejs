@@ -50,7 +50,9 @@
                         <line x1="8" y1="2" x2="8" y2="6"></line>
                         <line x1="3" y1="10" x2="21" y2="10"></line>
                     </svg>
-                <%= posts[i].date %></p>
+
+                    <%= posts[i].created_at.toLocaleDateString("en-US", {month: "long", day: "numeric", year: "numeric"}) %>
+                </p>
 
                 <p>
                     <% if (posts[i].content.length > 150) { %>
