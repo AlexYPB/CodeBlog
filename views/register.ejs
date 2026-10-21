@@ -1,0 +1,111 @@
+<%- include("partials/header.ejs") %>
+
+
+<!-- TITLE SECTION -->
+<div class="welcome-section">
+    <h1>Join CoveBlog</h1>
+    <h2>Create an account and start sharing your stories.</h2>
+
+    <% if (error !== null) { %>
+        <h3 class="missing-inputs-error">Error: <%= error %></h3>
+    <% } %>
+
+
+
+
+
+</div>
+
+<!-- REGISTER FORM CARD -->
+<div class="white-box-card create-post-form">
+            
+    <form action="/register" method="POST">
+
+        <label>Username</label>
+    
+        <input class="post-title-input-box"
+            type="text"
+            name="title"
+            placeholder="Choose a username"
+        >
+
+
+        <label style="margin-top: 15px;">Email address</label>
+    
+        <input class="post-title-input-box"
+            type="text"
+            name="title"
+            placeholder="you@example.com"
+        >
+
+
+        <label style="margin-top: 15px;">Password</label>
+    
+        <input class="post-title-input-box"
+            type="text"
+            name="title"
+            placeholder="Create a password"
+        >
+
+
+        <label style="margin-top: 15px;">Confirm password</label>
+    
+        <input class="post-title-input-box"
+            type="text"
+            name="title"
+            placeholder="Retype your password"
+        >
+    
+
+        <button class="register-button" type="submit">Create Account</button>
+
+
+    </form>
+
+    <div class="post-divider register-divider" style="max-width: 800px; margin: 0 auto;">
+        <span></span>
+        <p>OR</p>
+        <span></span>
+    </div>
+
+    <button style="margin-top: 0;" class="register-button" type="button">
+        <span class="google-logo">G</span>
+        <p>Continue with Google</p>
+    </button>
+
+    <p class="auth-switch">
+        Already have an account?
+        <a href="/login">Log in</a>
+    </p>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs") %>

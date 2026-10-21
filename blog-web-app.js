@@ -6,7 +6,7 @@ import pg from "pg";
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
-  database: "codeblog",
+  database: "coveblog",
   password: process.env.DB_PASSWORD,
   port: 5433,
 });
@@ -34,6 +34,10 @@ app.get("/", async (req, res) => {
   }
 });
 
+// GET REGISTER PAGE
+app.get("/register", (req, res) => {
+  res.render("register.ejs", { error: null });
+});
 
 // GET ABOUT PAGE
 app.get("/about", (req, res) => {

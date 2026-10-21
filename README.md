@@ -1,6 +1,6 @@
-# CodeBlog
+# CoveBlog
 
-A responsive blogging web application built with **Node.js, Express, EJS, JavaScript, and CSS**. CodeBlog lets users create, browse, edit, and delete blog posts through a straightforward web interface.
+A responsive blogging web application built with **Node.js, Express, EJS, JavaScript, and CSS**. CoveBlog lets users create, browse, edit, and delete blog posts through a straightforward web interface.
 
 ## Features
 
@@ -31,8 +31,8 @@ Install [Node.js](https://nodejs.org/) and npm.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/AlexYPB/CodeBlog.git
-   cd CodeBlog
+   git clone https://github.com/AlexYPB/CoveBlog.git
+   cd CoveBlog
    ```
 
 2. Install dependencies:
@@ -51,14 +51,14 @@ Install [Node.js](https://nodejs.org/) and npm.
 
 ## How It Works
 
-CodeBlog uses Express routes to handle requests and EJS templates to render pages. Posts are stored in a JavaScript array on the server, and each post has an ID, title, content, and creation date.
+CoveBlog uses Express routes to handle requests and EJS templates to render pages. Posts are stored in a JavaScript array on the server, and each post has an ID, title, content, and creation date.
 
 **V1 limitation:** Posts are stored **in memory**, so they are lost when the Node.js server restarts. V1 also does not include user accounts or a hosted live demo.
 
 ## Project Structure
 
 ```text
-CodeBlog/
+CoveBlog/
 ├── blog-web-app.js       # Express server and routes
 ├── public/
 │   ├── blog-web-app.css  # Styles
