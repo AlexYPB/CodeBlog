@@ -1,687 +1,466 @@
+/* ============================================================
+   GLOBAL STYLES AND COLORS
+   ============================================================ */
+   :root {
+    --teal: #225464;
+    --teal-hover: #3987a1;
+    --canvas: #e8e8e8;
+    --text: #5e5c5c;
+    --heading: #333;
+    --cream: #ede9c7;
+    --border: #acacac;
+}
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-  }
+}
 
 body {
-    font-family: "Libre Baskerville", serif;
-    background-color: #E8E8E8;
-
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: var(--canvas);
+    color: var(--text);
+    font-family: "Libre Baskerville", serif;
 }
 
 textarea {
     resize: vertical;
+    max-width: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------- */
-/* NAVBAR SECTION */
-
-nav {
-    display:flex;
-    flex-direction:row;
-    background-color: #225464;
+/* ============================================================
+   NAVIGATION BAR
+   ============================================================ */
+.navbar {
+    display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    background: var(--teal);
 }
 
-/* STYLING FOR NAVBAR ELEMENTS */
-nav a {
-    margin:15px 10px 15px 10px;
-    color: #EDE9C7;
-    text-decoration: none;
-    transition: color 0.2s ease-in-out;
+.navbar a {
+    margin: 15px 10px;
     padding: 10px;
+    color: var(--cream);
+    text-decoration: none;
     white-space: nowrap;
     font-weight: 500;
+    transition: color .2s;
 }
 
-.nav-button {
-    font-size: 25px;
-} 
+.navbar a:hover {
+    color: #c9c7c7;
+}
 
-/* HOVER ANIMATION FOR NAVBAR BUTTONS */
-nav a:hover {
-    color: #C9C7C7;
-  }
-
-
-
-/* PUSHES ELEMENTS NEXT TO HOMEPAGE TITLE TO THE RIGHT */
-#navbar-title {
+.navbar .navbar-brand {
     margin-right: auto;
-    background-color: transparent;
     font-size: 28px;
     font-weight: 700;
 }
 
+.navbar-link {
+    font-size: 25px;
+}
 
+/* ============================================================
+   PAGE LAYOUT AND HEADINGS
+   ============================================================ */
+.page-heading {
+    max-width: 90%;
+    margin: 75px auto 0;
+    text-align: center;
+}
 
+.page-heading h1 {
+    margin-bottom: 20px;
+    color: var(--heading);
+    font-size: 48px;
+}
 
+.white-card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+    text-align: left;
+}
 
+.white-card h2 {
+    color: var(--teal);
+}
 
+.margin-top-small {
+    margin-top: 15px;
+}
 
+.margin-top-medium {
+    margin-top: 20px;
+}
 
+.margin-top-large {
+    margin-top: 30px;
+}
 
+.margin-left-small {
+    margin-left: 10px;
+}
 
+/* Explicit buttons and links: no broad .white-card a or .white-card button rules */
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--teal);
+    color: white;
+    font: inherit;
+    font-size: 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .1s, transform .1s;
+}
 
+.button:hover {
+    background: var(--teal-hover);
+    color: white;
+}
 
+.button:active {
+    transform: scale(.97);
+}
 
+.rounded-button {
+    margin-top: 30px;
+    border-radius: 50px;
+}
 
+.full-width-button {
+    width: 100%;
+    margin-top: 25px;
+    border-radius: 10px;
+}
 
+.no-top-margin {
+    margin-top: 0;
+}
 
+.dark-button {
+    padding: 8px;
+    border: 1px solid #000;
+    background: #000;
+    opacity: .6;
+    font-size: inherit;
+}
 
+.home-button {
+    margin: 60px auto 0;
+    border-radius: 15px;
+}
 
+.home-button svg {
+    width: 20px;
+    height: 20px;
+    color: white;
+}
 
+.hover-button:hover {
+    background: var(--teal-hover);
+}
 
+/* ============================================================
+   FORMS AND ACCOUNT PAGES
+   ============================================================ */
+.form-card form {
+    display: flex;
+    flex-direction: column;
+}
 
+.form-card label {
+    display: block;
+    color: var(--teal);
+    font-size: 24px;
+    font-weight: 700;
+}
 
-/* ---------------------------------------------------- */
-/* WELCOME SECTION AND WEBSITE TITLES */
+.form-input {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 4px solid var(--border);
+    border-radius: 9px;
+    font: inherit;
+    font-size: 18px;
+}
 
-.welcome-section {
-    color: #5E5C5C;
-    margin-top: 75px;
+.form-textarea {
+    height: 250px;
+}
+
+.form-card form > .button:not(.full-width-button) {
+    align-self: center;
+    border-radius: 50px;
+}
+
+.form-error {
+    margin-top: 15px;
+    color: #a70101;
+    opacity: .7;
+    font-size: 24px;
+}
+
+.login-prompt {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 15px;
+}
+
+.login-prompt a {
+    color: var(--teal);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+/* ============================================================
+   BLOG POSTS
+   ============================================================ */
+.recent-posts-section {
+    margin: 75px 0;
+    text-align: center;
+}
+
+.recent-posts-section h2 {
+    color: var(--heading);
+    font-size: 32px;
+}
+
+.recent-posts-section .empty-message {
+    opacity: .6;
+    font-size: 25px;
+}
+
+.empty-message-with-spacing {
+    margin-top: 110px;
+}
+
+.post-date {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: .6;
+}
+
+.post-info-and-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.post-detail {
+    background: transparent;
+    box-shadow: none;
+}
+
+.post-detail-title {
+    font-size: 56px;
+}
+
+.post-edit-icon {
+    max-width: 32px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.divider > span:not(.divider-icon) {
+    flex: 1;
+    height: 1px;
+    background: var(--teal);
+}
+
+.divider-icon {
+    color: var(--teal);
+    font-size: 10px;
+}
+
+.narrow-divider {
+    max-width: 475px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-    max-width: 90%;
-}
-/* WELCOME SECTION TITLE */
-.welcome-section h1 {
-    font-size: 48px;
-    font-weight: 700;
-    color: #333333;
-    margin-bottom: 20px;
 }
 
+.auth-divider > span {
+    background: var(--border);
+}
 
+.delete-form {
+    display: inline;
+}
 
-
-
-
-
-
-
-
-/* ---------------------------------------------------- */
-/* ABOUT PAGE */
-
-.about-page {
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+.about-content {
     margin-left: 20%;
     margin-right: 20%;
 }
 
-#smaller-about-heading {
+.about-heading {
     margin-top: 70px;
     font-size: 32px;
 }
 
-.what-can-you-do-flex-box-container {
+.about-closing {
+    margin-bottom: 85px;
+}
+
+.feature-list {
     display: flex;
     flex-direction: row;
     gap: 15px;
 }
 
-.what-can-you-do-svg-line {
+.feature-card-heading {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
-#why-does-it-exist-container {
-    margin-bottom: 85px;
-}
-
-
-.white-box-card .register-button {
-    font-size: 18px;
-    background-color: #225464;
-    color: white;
-    padding: 15px;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 10px;
-    border: none;
-    margin-top: 25px;
-    cursor: pointer;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.register-button:hover {
-    background-color: #3987a1;
-}
-
-.auth-switch {
-    margin-top: 25px;
-    text-align: center;
-    font-size: 15px;
-    color: #5E5C5C;
-}
-
-.white-box-card .auth-switch a {
-    display: inline;
-    background: none;
-    border: none;
-    padding: 0;
-    margin: 0;
-    box-shadow: none;
-    border-radius: 0;
-
-    color: #225464;
-    font-weight: bold;
-    text-decoration: underline;
-}
-
-.white-box-card .auth-switch a:hover {
-    text-decoration: underline;
-}
-
-.white-box-card .auth-switch {
-    margin: 10px 0 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------- */
-/* RECENT POSTS SECTION */
-
-.recent-posts-section {
-    margin: 75px 0px;
-    color: #5E5C5C;
-    text-align: center;
-}
-
-/* RECENT POSTS SECTION TITLE */
-.recent-posts-section h2 {
-    color: #333333;
-    font-size: 32px;
-    font-weight: 700;
-}
-/* GREATER SPECIFICITY TO TARGET .NO-POSTS-MESSAGE */
-.recent-posts-section .no-posts-message { 
-    opacity: 0.6;
-    font-size: 25px;
-    
-}
-
-/* CREATE FIRST POST BUTTON */
-.create-first-post-button {
-    display: inline-block; /* MAKES MARGIN-TOP FUNCTION */
-    font-size: 18px;
-    background-color: #225464;
-    color:white;
-    padding: 15px;
-    border-radius: 50px;
-    border: none;
-    margin-top: 30px;
-    text-decoration: none;
-}
-
-.create-first-post-button:active {
-    transform: scale(0.90);
-    background-color: grey;
-    transition: transform 0.1s;
-}
-
-/* SIMPLE PUBLISH BUTTON HOVER ANIMATION */
-.create-first-post-button:hover {
-    cursor: pointer;
-    transition: transform 0.1s;
-    color: rgb(210, 210, 210);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* WHITE BOX CARD TEMPLATE */
-.white-box-card {
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    margin: 20px auto;
-    text-align: left;
-    
+/* ============================================================
+   ERROR PAGES
+   ============================================================ */
+.error-page {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding: 30px;
-
-    max-width: 800px;
-    width: 90%;
-}
-
-/* WHITE BOX CARD TITLE */
-.white-box-card h2 {
-    color: #225464;
-}
-
-/* READ MORE BUTTON */
-.white-box-card a {
-    background-color: #225464;
-    color:white;
-    text-decoration: none;
-    align-self: flex-start;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------- */
-/* POST PAGE SECTION  */
-
-.date-edit-line {
-    display: flex;
-    flex-direction: row;
-}
-
-
-/* GREATER SPECIFICITY FOR EDIT POST PAGE BUTTONS  */
-.white-box-card a.post-button,
-.white-box-card button.post-button {
-    font: inherit;
-    margin: 0;
-
-    background-color: black;
-    border: 1px solid black;
-    color: white;
-    opacity: 0.6;
-    text-decoration: none;
-    align-self: flex-start;
-    padding: 8px;
-    border-radius: 8px;
-}
-
-.date {
-    opacity: 0.6;
-    display: flex;
     align-items: center;
-    gap: 8px;
-}
-
-/* POST DIVIDER */
-.post-divider {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    width: 100%;
-    margin: 10px 0;
-}
-
-.post-divider span:not(.diamond) {
-    height: 1px;
-    background-color: #225464;
-    flex: 1;
-}
-
-.diamond {
-    color: #225464;
-    font-size: 10px;
-}
-
-.date-buttons-container {
-    background-color: transparent;
-    box-shadow: none;
-}
-
-#edit-svg {
-    margin-left: auto;
-}
-
-
-#change-button:active {
-    transform: scale(0.90);
-    background-color: grey;
-    transition: transform 0.1s;
-}
-
-/* READ MORE BUTTON ANIMATION */
-#change-button:hover {
-    cursor: pointer;
-    transition: transform 0.1s;
-    color: rgb(255, 255, 255);
-    background-color: #3987a1;
-
-}
-
-#nav-button {
-    font-size: 25px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------- */
-/* CREATE POST SECTION */
-.create-post-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.create-post-form label {
-    display: block; /* FORCES INPUT SECTION TO THE NEXT LINE */
-    font-size: 24px;
-    color: #225464;
-    font-weight: 700;
-}
-
-
-/* TITLE BOX */
-.post-title-input-box {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 18px;
-}
-
-
-/* CONTENT BOX */
-.post-content-input-box {
-    width: 100%;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 18px;
-    height: 250px;
-}
-
-
-
-/* PUBLISH BUTTON ON CREATE POST */
-.white-box-card button {
-    font-size: 18px;
-    background-color: #225464;
-    color:white;
-    padding: 15px;
-    border-radius: 50px;
-    border: none;
-    margin: auto;
-}
-
-/* SIMPLE PUBLISH BUTTON CLICK ANIMATION */
-.white-box-card button:active {
-    transform: scale(0.90);
-    background-color: grey;
-    transition: transform 0.1s;
-}
-
-/* SIMPLE PUBLISH BUTTON HOVER ANIMATION */
-.white-box-card button:hover {
-    cursor: pointer;
-    transition: transform 0.1s;
-    color: rgb(255, 255, 255);
-    background-color: #3987a1;
-}
-
-.missing-inputs-error {
-    color: rgb(167, 1, 1);
-    opacity: 0.7;
-    font-size: 24px;
-    margin-top: 15px;
-}
-
-
-
-
-
-
-/* UNIFORM BORDER FOR INPUT BOXES*/
-.post-title-input-box,
-.post-content-input-box {
-    border: 4px solid #acacac;
-    border-radius: 9px;
-}
-
-
-
-/* ---------------------------------------------------- */
-/* 404 PAGE */
-
-.error-section {
-    margin: auto;
     max-width: 500px;
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: auto;
 }
 
-.error-section h2 {
+.error-page h2 {
     margin-top: 10px;
 }
 
-.error-section .error-code {
-    font-size: 200px;
+.error-code {
     margin-bottom: 0;
+    font-size: 200px;
 }
 
-.back-home-button {
-    display: flex;
-    flex-direction: row;
-    margin-top: 60px;
-
-
-    background-color: #225464;
-    color:white;
-    
-    align-self: flex-start;
-    padding: 15px;
-    border-radius: 15px;
-
-    width: fit-content;
-    margin-left: auto;
-    margin-right: auto;
-
-    text-decoration: none;
-    transition: transform 0.1s;
-
-}
-
-.back-home-button svg {
-    height: 20px;
-    width: 20px;
-    margin-right: 10px;
-    color: white;
-}
-
-.back-home-button:active {
-    transform: scale(0.90);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ---------------------------------------------------- */
-/* FOOTER */
-
-footer {
-    text-align: center;
-    background-color: #225464;
-    color: #EDE9C7;
-
-
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
     margin-top: auto;
-    border: none;
     padding: 15px;
+    background: var(--teal);
+    color: var(--cream);
+    text-align: center;
 }
 
-footer * {
-    font-size: 20px;
+.footer * {
     margin: 4px;
+    font-size: 20px;
 }
 
-footer h3 {
+.footer h3 {
     color: #e1e1e1;
     font-size: 16px;
 }
 
-footer .post-divider span:not(.diamond) {
-    background-color: #EDE9C7;
+.footer .divider > span:not(.divider-icon) {
+    background: var(--cream);
 }
 
-footer .post-divider .diamond {
-    color: #EDE9C7;
+.footer .divider-icon {
+    color: var(--cream);
 }
 
-/* REGISTER PAGE DIVIDER */
-.post-divider .register-divider {
-    background-color: #acacac;
-    color: #acacac;
+.footer-tagline {
+    font-size: 18px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* STYLING FOR MOBILE DEVICES */
-@media (max-width: 600px) {
-    #nav-button {
-        padding: 5px;
-        font-size: 17px;
-    }
+footer .divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 10px auto;
 }
 
+footer .post-divider .divider-icon {
+    margin: 0;
+    line-height: 1;
+}
 
+/* ============================================================
+   RESPONSIVE STYLES - TABLETS AND SMALLER SCREENS
+   ============================================================ */
 @media (max-width: 1000px) {
+    
+  .about-content {
+    margin-left: auto;
+    margin-right: auto;
+}
 
-    /* ABOUT PAGE CONTENT CAN TAKE UP MORE OF THE SCREEN IF THE SCREEN IS SMALLER */
-    .about-page {
-        margin-left: auto;
-        margin-right: auto;
-    }
+  .feature-list {
+    flex-direction: column;
+    gap: 0;
+}
 
-    .what-can-you-do-flex-box-container {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-    }
+  .post-info-and-buttons {
+    flex-wrap: wrap;
+}
 
+  .post-info-and-buttons .post-date {
+    flex-basis: 100%;
+}
 
-    /* POST PAGE DATE-EDIT-LINE FIX FOR SMALLER SCREENS */
-    .date-edit-line {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  .post-info-and-buttons .hover-button {
+    margin-top: 20px;
+}
 
-    .date {
-        opacity: 0.6;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        
-        flex-basis: 100%;
-    }
+  .post-edit-icon {
+    margin-left: 0;
+    margin-top: 20px;
+}
 
-    .white-box-card .date-edit-line .change-button {
-        margin-top: 20px;
-    }
+}
 
-    #edit-svg {
-        margin-left: 0;
-        margin-top: 20px;
-    }
+/* ============================================================
+   RESPONSIVE STYLES - PHONES
+   ============================================================ */
+@media (max-width: 600px) {
+    
+  .navbar-link {
+    padding: 5px;
+    font-size: 17px;
+}
+
+  .page-heading h1 {
+    font-size: 38px;
+}
+
+  .white-card {
+    padding: 20px;
+}
+
+  .error-code {
+    font-size: 130px;
+}
 
 }

@@ -1,24 +1,24 @@
 <%- include("partials/header.ejs") %>
 
 
-<div class="welcome-section">
+<div class="page-heading">
     <h1>Edit Post</h1>
     <h2>Change Something About It...</h2>
 
     <% if (error !== null) { %>
-        <h3 class="missing-inputs-error">Error: <%= error %></h3>
+        <h3 class="form-error">Error: <%= error %></h3>
     <% } %>
 
 </div>
 
 <!-- EDIT BLOG POST FORM CARD -->
-<div class="white-box-card create-post-form">
+<div class="white-card form-card">
             
     <form action="/posts/<%= post.id %>/edit" method="POST">
 
         <label>Blog Post Title</label>
     
-        <input class="post-title-input-box"
+        <input class="form-input"
             type="text"
             name="title"
             value="<%= title %>"
@@ -29,12 +29,12 @@
 
 
     
-        <label style="margin-top: 30px;">Blog Post Content</label>
+        <label class="margin-top-large">Blog Post Content</label>
     
-        <textarea class="post-content-input-box" name="content"><%= content %></textarea>
+        <textarea class="form-input form-textarea" name="content"><%= content %></textarea>
     
 
-    <button  style="margin-top: 20px;" type="submit">Save Changes</button>
+    <button  class="button rounded-button margin-top-medium" type="submit">Save Changes</button>
 
 </form>
 

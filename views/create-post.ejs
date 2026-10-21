@@ -3,12 +3,12 @@
 
 
 <!-- TITLE SECTION -->
-<div class="welcome-section">
+<div class="page-heading">
     <h1>Create a New Post</h1>
     <h2>Share Something New...</h2>
 
     <% if (error !== null) { %>
-        <h3 class="missing-inputs-error">Error: <%= error %></h3>
+        <h3 class="form-error">Error: <%= error %></h3>
     <% } %>
 
 
@@ -18,12 +18,12 @@
 </div>
 
 <!-- CREATE BLOG POST FORM CARD -->
-<div class="white-box-card create-post-form">
+<div class="white-card form-card">
             
     <form action="/create" method="POST">
         <label>Blog Post Title</label>
     
-        <input value="<%= title %>" class="post-title-input-box"
+        <input value="<%= title %>" class="form-input"
             type="text"
             name="title"
             placeholder="Write your title here..."
@@ -32,16 +32,16 @@
 
 
     
-        <label style="margin-top: 30px;">Blog Post Content</label>
+        <label class="margin-top-large">Blog Post Content</label>
     
-        <textarea class="post-content-input-box"
+        <textarea class="form-input form-textarea"
             type="text"
             name="content"
             placeholder="Write your post here..."
         ><%= content %></textarea>
     
 
-    <button  style="margin-top: 20px;" type="submit">Publish</button>
+    <button  class="button rounded-button margin-top-medium" type="submit">Publish</button>
 
 </form>
 

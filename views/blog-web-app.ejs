@@ -3,7 +3,7 @@
 
 
     <!-- SIMPLE WELCOME SECTION -->
-    <div class="welcome-section">
+    <div class="page-heading">
         <h1>Welcome to CoveBlog</h1>
         <h2>This is where you document your journey...</h2>
     </div>
@@ -25,15 +25,15 @@
 
         <!-- NO POSTS ALERT MESSAGE -->
         <% if (posts.length == 0) { %>
-                <h2 class="no-posts-message" style="margin-top: 110px;">No posts yet.</h2>
-                <a href="/create" class="create-first-post-button">Create Your First Post!</a>
+                <h2 class="empty-message empty-message-with-spacing">No posts yet.</h2>
+                <a href="/create" class="button rounded-button">Create Your First Post!</a>
         <% } %>
 
          <!-- SHOWS ALL POSTS -->
         <% for (let i = 0; i < posts.length; i++) { %>
-            <div class="white-box-card">
+            <div class="white-card">
                 <h2><%= posts[i].title %></h2>
-                <p class="date">
+                <p class="post-date">
                     <svg
                         width="18"
                         height="18"
@@ -62,7 +62,7 @@
                     <% } %>
                 </p>
 
-                <a id="change-button" href="/posts/<%=posts[i].id %>">Read More</a>
+                <a class="button" href="/posts/<%=posts[i].id %>">Read More</a>
             </div>
         <% } %>
 
