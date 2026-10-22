@@ -23,37 +23,50 @@
 
         <label>Username</label>
     
-        <input class="form-input"
+        <input 
+            class="form-input"
             type="text"
-            name="title"
+            name="username"
             placeholder="Choose a username"
+            autocomplete="username"
+            required
         >
 
 
         <label class="margin-top-small">Email address</label>
     
-        <input class="form-input"
-            type="text"
-            name="title"
+        <input 
+            class="form-input"
+            type="email"
+            name="email"
             placeholder="you@example.com"
+
+            autocomplete="email"
+            required
         >
 
 
         <label class="margin-top-small">Password</label>
     
         <input class="form-input"
-            type="text"
-            name="title"
+            type="password"
+            name="password"
             placeholder="Create a password"
+
+            autocomplete="new-password"
+            required
         >
 
 
         <label class="margin-top-small">Confirm password</label>
     
         <input class="form-input"
-            type="text"
-            name="title"
+            type="password"
+            name="confirmPassword"
             placeholder="Retype your password"
+
+            autocomplete="new-password"
+            required
         >
     
 
@@ -77,35 +90,6 @@
         Already have an account?
         <a href="/login">Log in</a>
     </p>
-
-
-
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <%- include("partials/footer.ejs") %>

@@ -1,0 +1,75 @@
+<%- include("partials/header.ejs") %>
+
+
+<!-- TITLE SECTION -->
+<div class="page-heading">
+    <h1>Welcome Back</h1>
+    <h2>Log in to your account and continue sharing your stories.</h2>
+
+    <% if (error !== null) { %>
+        <h3 class="form-error">Error: <%= error %></h3>
+    <% } %>
+
+
+
+
+
+</div>
+
+<!-- LOGIN FORM CARD -->
+<div class="white-card form-card">
+            
+    <form action="/login" method="POST">
+
+        <label class="margin-top-small">Email address</label>
+    
+        <input 
+            class="form-input"
+            type="email"
+            name="email"
+            placeholder="you@example.com"
+
+            autocomplete="email"
+            required
+        >
+
+
+        <label class="margin-top-small">Password</label>
+    
+        <input class="form-input"
+            type="password"
+            name="password"
+            placeholder="Enter your password"
+
+            autocomplete="current-password"
+            required
+        >
+
+
+        <p class="login-prompt">
+            <a href="/forgot-password">Forgot password?</a>
+        </p>
+        
+
+        <button class="button full-width-button" type="submit">Log In</button>
+
+    </form>
+
+    <div class="divider auth-divider" >
+        <span></span>
+        <p>OR</p>
+        <span></span>
+    </div>
+
+    <button class="button full-width-button no-top-margin" type="button">
+        <span class="google-logo">G</span>
+        <p>Continue with Google</p>
+    </button>
+
+    <p class="login-prompt">
+        Don't have an account?
+        <a href="/register">Sign up</a>
+    </p>
+</div>
+
+<%- include("partials/footer.ejs") %>

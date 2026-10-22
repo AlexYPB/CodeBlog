@@ -30,3 +30,15 @@
       <a class="navbar-link" href="/about">About</a>
       <a class="navbar-link" href="/create">Create Post</a>
   </nav>
+
+  <% if (currentUser !== null) { %>
+    <p>Welcome, <%= currentUser.username %>!</p>
+
+    <form action="/logout" method="POST">
+      <button type="submit">Log Out</button>
+    </form>
+
+  <% } else { %>
+    <a href="/login">Log In</a>
+    <a href="/register">Sign Up</a>
+  <% } %>
